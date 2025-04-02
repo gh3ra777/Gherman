@@ -194,8 +194,22 @@ span    {
     margin: 2rem 0 3rem;
 }
 
-.services h2   {
+.services h2 {
     margin-bottom: 5rem;
+}
+
+.services-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.services-box h3 {
+    font-size: 2.6rem;
+}
+
+.services-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
 }
 
 .services-container {
@@ -206,32 +220,57 @@ span    {
     gap: 2rem;
 }
 
-.services-container .services-box   {
+
+.services-box {
     flex: 1 1 30rem;
-    background: var(--second-bg-color);
-    padding: 3rem 2rem 4rem;
-    border-radius: 2rem;
+    height: 300px;
+    position: relative;
+    perspective: 1000px; 
+    
+}
+
+.services-box .services-content,
+.services-box .services-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--main-color);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 3rem 2rem;
+    backface-visibility: hidden;
+    transition: transform 1s ease;
     border: .2rem solid var(--bg-color);
-    transition: .5s ease;
+    
 }
 
-.services-container .services-box:hover    {
+
+
+.services-box .services-content {
+    background: var(--second-bg-color);
+}
+.services-box:hover .services-content {
     border-color: var(--main-color);
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
-.services-box i    {
-    font-size: 7rem;
-    color: var(--main-color);
-}
-
-.services-box h3    {
-font-size: 2.6rem;
+.services-box .services-back {
+    background: var(--second-bg-color);
+    color: var(--text-color);
+    transform: rotateY(180deg);
+    border-color: var(--main-color);
 }
 
-.services-box p     {
-    font-size: 1.6rem;
-    margin: 1rem 0 3rem;
+
+.services-box.flipped .services-content {
+    transform: rotateY(180deg);
+}
+
+.services-box.flipped .services-back {
+    transform: rotateY(0);
 }
 
 .portofoliu  {

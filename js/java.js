@@ -45,6 +45,25 @@ ScrollReveal({
     delay:200
 });
 
+
+function flipCard(cardId) {
+    document.getElementById(cardId).classList.toggle("flipped");
+  }
+
+  function flipBack(cardId) {
+    let card = document.getElementById(cardId);
+    card.classList.toggle("flipped");
+
+    // Muta pagina la cardul respectiv
+    card.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function flipCard(button) {
+    let card = button.closest(".services-box");
+    card.classList.toggle("flipped");
+}
+
+
 ScrollReveal().reveal('.home-content, .heading', {origin: 'top'});
 ScrollReveal().reveal('.home-img, .services-container, .portofoliu-box, .contact form', {origin: 'bottom'});
 ScrollReveal().reveal('.home-content h1, .about-img ', {origin: 'left'});
